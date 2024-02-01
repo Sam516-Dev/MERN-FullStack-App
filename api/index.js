@@ -2,6 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRounter from "./routes/user.route.js"
+import authRouter from "./routes/auth.route.js"
+
 dotenv.config();
 
 mongoose
@@ -19,10 +21,7 @@ const app = express();
 //   res.send("Hey there");
 // });
 app.use("/api/user", userRounter)
-
-app.get("/login", (req, res) => {
-  res.send("You tried to login !");
-});
+app.use("/api/signup", authRouter)
 
 app.listen(3000, () => {
   console.log("app listening on port 3000 !!");
