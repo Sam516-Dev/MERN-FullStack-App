@@ -8,3 +8,10 @@ router.get('/test', test)
 
 
 export default router
+
+
+
+
+app.get('/', (req, res) => {
+    res.send('hello world')
+  })

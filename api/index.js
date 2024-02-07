@@ -17,9 +17,7 @@ mongoose
 
 const app = express();
 
-// app.get("/test", (req, res) => {
-//   res.send("Hey there");
-// });
+
 app.use("/api/user", userRounter)
 app.use("/api/signup", authRouter)
 
