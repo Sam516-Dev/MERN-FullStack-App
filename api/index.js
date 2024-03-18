@@ -16,10 +16,11 @@ mongoose
   });
 
 const app = express();
+app.use(express.json())
 
 
 app.use("/api/user", userRounter)
-app.use("/api/signup", authRouter)
+app.use("/api/auth", authRouter)
 
 app.listen(3000, () => {
   console.log("app listening on port 3000 !!");
