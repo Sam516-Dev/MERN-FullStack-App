@@ -12,6 +12,6 @@ export default router
 
 
 
-app.get('/', (req, res) => {
-    res.send('hello world')
-  })
+// app.get('/', (req, res) => {
+//     res.send('hello world')
+//   })
