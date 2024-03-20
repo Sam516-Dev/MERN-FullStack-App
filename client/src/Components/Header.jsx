@@ -16,6 +16,8 @@ const Header = () => {
           />
           <FaSearch className="absolute right-4 text-slate-600" />
         </form>
+
+
         <ul className="flex gap-5">
           <Link to='/'>
             <li className="hover:underline  ">Home</li>
@@ -23,10 +25,14 @@ const Header = () => {
           <Link to='/about'>
             <li className="hover:underline  ">About</li>
           </Link>
-          <Link to='/SingIn'>
+
+          <Link to='/signIn'>
             <li className="hover:underline  ">SignIn</li>
           </Link>
+
         </ul>
+
+        
       </div>
     </header>
   );
