@@ -1,0 +1,7 @@
+//to run the server - make sure you're on the root directory
+//i.e - without branching to either api or client
+//run by cmd - npm run dev
+
+//for the fronted - cd to client and run by cmd - npm run dev
+
+//hope that's clear 😁
