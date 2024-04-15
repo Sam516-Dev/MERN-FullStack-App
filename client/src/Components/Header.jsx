@@ -29,6 +29,9 @@ const Header = () => {
           <Link to='/signIn'>
             <li className="hover:underline  ">SignIn</li>
           </Link>
+          <Link to='/signUp'>
+            <li className="hover:underline  ">SignUp</li>
+          </Link>
 
         </ul>
 
