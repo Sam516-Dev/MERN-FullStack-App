@@ -6,7 +6,9 @@ const SignUp = () => {
   const [formData, setformData] = useState({});
   const [myerror, setmyError] = useState(null);
   const [loading, setLoading] = useState(false);
+
   const navigate = useNavigate();
+
   const handleChange = (e) => {
     setformData({
       ...formData,
@@ -14,6 +16,7 @@ const SignUp = () => {
     });
   };
   console.log(formData);
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -51,13 +54,15 @@ const SignUp = () => {
         Sign Up
       </h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+       
         <input
           type="text"
-          placeholder="username"
+          placeholder="enter username"
           className="text-indigo-950  outline-none font-medium border p-3 rounded-lg"
           id="username"
           onChange={handleChange}
         />
+
         <input
           type="email"
           placeholder="email"
@@ -65,6 +70,7 @@ const SignUp = () => {
           id="email"
           onChange={handleChange}
         />
+
         <input
           type="password"
           placeholder="password"
