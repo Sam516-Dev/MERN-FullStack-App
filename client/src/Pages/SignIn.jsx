@@ -1,11 +1,13 @@
 import React from "react";
 
 const SignIn = () => {
+
+
+
   return (
     <div className="p-3 max-w-lg mx-auto bg-indigo-200 mt-9 rounded-md py-16 px-6">
       <h1 className="text-3xl text-center font-bold mb-8 text-indigo-950 ">
-        {" "}
-        Sign In {" "}
+        Sign In
       </h1>
       <form className="flex flex-col gap-6">
         <input
