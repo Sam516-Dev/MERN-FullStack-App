@@ -53,8 +53,7 @@ const SignUp = () => {
       <h1 className="text-3xl text-center font-bold mb-8 text-indigo-950 ">
         Sign Up
       </h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-       
+      <form onSubmit={handleSubmit} className="flex flex-col gap-6">   
         <input
           type="text"
           placeholder="enter username"
@@ -62,7 +61,6 @@ const SignUp = () => {
           id="username"
           onChange={handleChange}
         />
-
         <input
           type="email"
           placeholder="email"
