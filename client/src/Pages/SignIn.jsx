@@ -85,7 +85,7 @@ const SignIn = () => {
               <Loader />
             </div>
           ) : (
-            "Sign Up"
+            "Sign In"
           )}
         </button>
       </form>
