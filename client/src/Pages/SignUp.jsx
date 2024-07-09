@@ -16,7 +16,6 @@ const SignUp = () => {
     });
   };
   console.log(formData);
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,7 +52,7 @@ const SignUp = () => {
       <h1 className="text-3xl text-center font-bold mb-8 text-indigo-950 ">
         Sign Up
       </h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-6">   
+      <form onSubmit={handleSubmit} className="flex flex-col gap-6">
         <input
           type="text"
           placeholder="enter username"
@@ -97,7 +96,6 @@ const SignUp = () => {
         </Link>
       </div>
       <div>
-     
         {myerror && (
           <p className="text-red-500 text-center bg-white p-2 mt-3 rounded-sm font-semibold">
             {myerror}
