@@ -40,7 +40,7 @@ const SignUp = () => {
         navigate("/signIn");
       }
     } catch (error) {
-      setmyError(data.message);
+      setmyError(error.message);
       setLoading(false);
     }
   };

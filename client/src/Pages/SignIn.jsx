@@ -32,15 +32,16 @@ const SignIn = () => {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-      console.log(data);
+      console.log("this is data from post mthd: ", data);
 
       if (data.success === false) {
         dispatch(signfailure(data.message));
-
         return;
       } else {
-        dispatch(signsuccess(data.message));
-        navigate("/home");
+        dispatch(
+          signsuccess({ token: data.token, currentUser: data.currentUser })
+        );
+        navigate("/");
       }
     } catch (error) {
       dispatch(signfailure(error.message));
