@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Loader from "../SubComponents/Loader";
+import OAuth from "../Components/OAuth";
 
 const SignUp = () => {
   const [formData, setformData] = useState({});
@@ -88,6 +89,7 @@ const SignUp = () => {
             "Sign Up"
           )}
         </button>
+        <OAuth />
       </form>
       <div className="flex gap-3 justify-center mt-4">
         <p>Have an account ?</p>
