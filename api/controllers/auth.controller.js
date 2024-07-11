@@ -37,28 +37,28 @@ export const signin = async (req, res, next) => {
 export const google = async (req, res, next) => {
   const { name, email, photo } = req.body;
   try {
-    const validUser = await User.findOne({ email });
-    if (validUser) {
-      const token = jwt.sign({ id: validUser._id }, process.env.JWT_SECRET);
-      const { password: pass, ...rest } = validUser._doc;
+    const validUser2 = await User.findOne({ email });
+    if (validUser2) {
+      const token = jwt.sign({ id: validUser2._id }, process.env.JWT_SECRET);
+      const { password: pass, ...rest } = validUser2._doc;
       res
         .cookie("access_token", token, { httpOnly: true })
         .status(200)
         .json({ token, currentUser: rest });
     } else {
       const randomPassword = Math.random().toString(36).slice(-8);
-      const hashedpassword = bcryptjs.hashSync(randomPassword, 10);
+      const hashedPassword = bcryptjs.hashSync(randomPassword, 10);
       const newUser = new User({
-        name:
-          name.split("").join("").tolowercase() +
+        username:
+          name.split(" ").join("").toLowerCase() +
           Math.random().toString(36).slice(-4),
         email,
         photo,
-        password: hashedpassword,
+        password: hashedPassword,
       });
       await newUser.save();
-      const token = jwt.sign({ id: validUser._id }, process.env.JWT_SECRET);
-      const { password: pass, ...rest } = validUser._doc;
+      const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET);
+      const { password: pass, ...rest } = newUser._doc;
       res
         .cookie("access_token", token, { httpOnly: true })
         .status(200)
