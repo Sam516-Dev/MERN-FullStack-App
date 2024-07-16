@@ -36,6 +36,7 @@ export const signin = async (req, res, next) => {
 
 export const google = async (req, res, next) => {
   const { name, email, photo } = req.body;
+  console.log("this is the req.body:", req.body);
   try {
     const validUser2 = await User.findOne({ email });
     if (validUser2) {
