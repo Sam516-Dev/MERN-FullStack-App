@@ -28,7 +28,7 @@ export const signin = async (req, res, next) => {
       .cookie("access_token", token, { httpOnly: true })
       .status(200)
       //.json(token, currentUser:rest);
-      .json({ token, currentUser: rest });
+      .json({ rest });
   } catch (error) {
     next(error);
   }
@@ -45,7 +45,8 @@ export const google = async (req, res, next) => {
       res
         .cookie("access_token", token, { httpOnly: true })
         .status(200)
-        .json({ token, currentUser: rest });
+        .json(rest);
+      console.log("111 Today details sent here by sam", rest);
     } else {
       const randomPassword = Math.random().toString(36).slice(-8);
       const hashedPassword = bcryptjs.hashSync(randomPassword, 10);
@@ -63,8 +64,8 @@ export const google = async (req, res, next) => {
       res
         .cookie("access_token", token, { httpOnly: true })
         .status(200)
-        .json({ token, currentUser: rest });
-      console.log("details here by sam", rest);
+        .json(rest);
+      console.log("222 Today details sent here by sam", rest);
     }
   } catch (error) {
     next(error);
